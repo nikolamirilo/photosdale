@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Post from "./Post";
 import moment from "moment";
