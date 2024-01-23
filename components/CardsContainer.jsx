@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Post from "./Post";
 import moment from "moment";
@@ -15,9 +16,11 @@ async function getData() {
 const CardsContainer = async () => {
   const res = await getData();
   const posts = await res?.data;
-  console.log(posts);
   return (
-    <div className="max-w-[1000px] mx-auto gap-2 grid grid-cols-12 grid-rows-2 px-8 my-20">
+    <div
+      className="max-w-[1000px] mx-auto gap-2 grid grid-cols-12 grid-rows-2 px-8 my-20"
+      id="posts"
+    >
       {posts
         ? posts
             .filter((item) => item.media_type !== "VIDEO")

@@ -1,6 +1,6 @@
 "use client";
+import { Form, Layout } from "@/components";
 import React from "react";
-import { Layout, Form } from "../components";
 
 const Contribute = () => {
   return (

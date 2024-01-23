@@ -12,6 +12,7 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/react";
 import Image from "next/image";
+import { FaInstagram } from "react-icons/fa";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,41 +31,51 @@ export default function App() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-stone-100">
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-[#FAF9F4] h-fit py-2"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Image src="/next.svg" width={100} height={100} alt="logo" />
+          <Image
+            src="/LogoPhotosdale.png"
+            width={100}
+            height={100}
+            alt="logo"
+          />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+          <Link color="foreground" href="/">
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link href="/contribute" aria-current="page">
+            Contribute
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+          <Link color="foreground" href="#posts">
+            Posts
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+          <Button
+            as={Link}
+            href="https://www.instagram.com/photosdale"
+            color="foreground"
+            className="flex flex-row gap-2 text-black text-medium"
+          >
+            <FaInstagram color="#D40B95" size={25} /> Instagram
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -91,37 +102,3 @@ export default function App() {
     </Navbar>
   );
 }
-
-// import React from "react";
-// import Link from "next/link";
-// import { BsInstagram } from "react-icons/bs";
-
-// const Navbar = () => {
-//   return (
-//     <div className="navbar-container">
-//       <nav className="navbar">
-//         <div
-//           className="logo"
-//           onClick={(e) => {
-//             e.preventDefault();
-//             window.location.href = "https://www.instagram.com/photosdale/";
-//           }}
-//         >
-//           <Link className="navbar-brand" href="#">
-//             <BsInstagram /> @photosdale
-//           </Link>
-//         </div>
-
-//         <ul className="navbar-nav ml-auto" id="navigation-links">
-//           <li className="nav-item">
-//             <Link className="nav-link" href="/">
-//               Home
-//             </Link>
-//           </li>
-//         </ul>
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default Navbar;

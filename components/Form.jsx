@@ -1,43 +1,33 @@
+import { Input } from "@nextui-org/react";
 import React from "react";
 
 const Form = () => {
   return (
-    <div className="form">
-      <h2>Contribute to photosdale</h2>
-      <form name="contribute" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="form-name" value="contribute" />
-        <div className="form-outline mb-2">
-          <label className="form-label" htmlFor="full-name">
-            Full name:
-          </label>
-          <input type="text" name="full-name" className="form-control" />
-        </div>
+    <div className="w-full min-h-[80vh] h-fit flex flex-col justify-center items-center gap-10 bg-primary">
+      <h1 className="text-3xl font-bold text-white">
+        Contribute to photosdale
+      </h1>
+      <form
+        name="contribute"
+        method="post"
+        enctype="multipart/form-data"
+        className="flex flex-col w-[400px] gap-2 rounded-md bg-white px-5 py-10"
+      >
+        <Input isRequired type="text" label="Full Name" fullWidth={true} />
+        <Input isRequired type="email" label="Email" fullWidth={true} />
+        <Input
+          isRequired
+          type="text"
+          label="Instagram Account"
+          fullWidth={true}
+        />
+        <Input isRequired type="file" defaultValue="" fullWidth={true} />
+        <Input isRequired type="text" label="Image Caption" fullWidth={true} />
 
-        <div className="form-outline mb-2">
-          <label className="form-label">Email address:</label>
-          <input type="email" name="email-address" className="form-control" />
-        </div>
-
-        <div className="form-outline mb-2">
-          <label className="form-label">Instagram account:</label>
-          <input
-            type="text"
-            name="instagram-account"
-            className="form-control"
-          />
-        </div>
-
-        <div className="form-outline mb-3">
-          <label className="form-label">Insert Image: </label> <br />
-          <input type="file" accept="image/*" name="image" />
-        </div>
-
-        <div className="form-outline mb-4">
-          <label className="form-label">Image caption:</label>
-          <input type="text" name="image-caption" className="form-control" />
-        </div>
-
-        <button type="submit" className="btn btn-primary btn-block mt-4 p-0">
+        <button
+          type="submit"
+          className="text-sm bg-primary hover:bg-blue-600 px-5 py-2 text-white rounded-md"
+        >
           Send
         </button>
       </form>
