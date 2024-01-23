@@ -4,9 +4,7 @@ import Post from "./Post";
 import moment from "moment";
 
 async function getData() {
-  const res = await fetch(
-    "https://v1.nocodeapi.com/nikola123/instagram/ASbwEgjlBEyPTxiu"
-  );
+  const res = await fetch(process.env.INSTA_API_URL);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
