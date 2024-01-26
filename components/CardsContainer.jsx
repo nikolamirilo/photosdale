@@ -1,18 +1,20 @@
 import React from "react";
 import Post from "./Post";
 import moment from "moment";
+import data from "../data.json";
 
 async function getData() {
   const res = await fetch(process.env.INSTA_API_URL);
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    console.log(res);
+    return false;
   }
   return res.json();
 }
 
 const CardsContainer = async () => {
   const res = await getData();
-  const posts = await res?.data;
+  var posts = res == false ? data : res?.data;
   return (
     <div
       className="max-w-[1000px] mx-auto gap-2 grid grid-cols-12 grid-rows-2 px-8 my-20"

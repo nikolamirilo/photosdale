@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="footer">
       <footer className="text-center bg-primary text-white">
         <div className="text-center text-light p-3">
-          © 2022 Copyright: Nikola Mirilo
+          © 2024 Copyright: Nikola Mirilo
         </div>
       </footer>
     </div>
